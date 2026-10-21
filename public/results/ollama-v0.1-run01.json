@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "status": "measured",
+  "started_at": "2026-10-21T13:31:57.481430+00:00",
+  "ollama_version": "0.40.5",
+  "environment": {
+    "os": "Windows",
+    "os_release": "11",
+    "architecture": "AMD64",
+    "hardware": "Not collected automatically; GPU residency, RAM and VRAM usage unverified."
+  },
+  "methodology": {
+    "prompt": "Explain how a rainbow forms in clear English, including refraction, reflection, and dispersion. Write approximately 200 words.",
+    "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_predict": 256,
+      "num_ctx": 2048
+    },
+    "warmups_per_model": 1,
+    "repetitions": 3,
+    "order": "sequential model blocks",
+    "duration_unit": "nanoseconds",
+    "throughput": "eval_count * 1e9 / eval_duration",
+    "keep_alive": "5m",
+    "cache_policy": "Repeated identical prompt; Ollama may reuse prompt cache. Warm load and cached prompt conditions."
+  },
+  "models": [
+    {
+      "model": "gemma3:4b",
+      "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "runs": [
+        {
+          "eval_count": 256,
+          "eval_duration": 2622051000,
+          "prompt_eval_count": 35,
+          "prompt_eval_duration": 30962000,
+          "load_duration": 2073600,
+          "total_duration": 2707918000,
+          "tokens_per_second": 97.63349378025065,
+          "repetition": 1
+        },
+        {
+          "eval_count": 256,
+          "eval_duration": 2605801000,
+          "prompt_eval_count": 35,
+          "prompt_eval_duration": 33698000,
+          "load_duration": 2613000,
+          "total_duration": 2660477900,
+          "tokens_per_second": 98.24234467635863,
+          "repetition": 2
+        },
+        {
+          "eval_count": 256,
+          "eval_duration": 2632626000,
+          "prompt_eval_count": 35,
+          "prompt_eval_duration": 29630000,
+          "load_duration": 2072800,
+          "total_duration": 2666652700,
+          "tokens_per_second": 97.24130962772531,
+          "repetition": 3
+        }
+      ],
+      "median_tokens_per_second": 97.63349378025065
+    },
+    {
+      "model": "mistral:7b-instruct-q4_0",
+      "digest": "b17615239298ea5bacfc1c46aa1842737b833779c805542b78f6be29c516d2f4",
+      "runs": [
+        {
+          "eval_count": 256,
+          "eval_duration": 3447867000,
+          "prompt_eval_count": 39,
+          "prompt_eval_duration": 14009000,
+          "load_duration": 2143600,
+          "total_duration": 3478045100,
+          "tokens_per_second": 74.24880368065241,
+          "repetition": 1
+        },
+        {
+          "eval_count": 256,
+          "eval_duration": 3427030000,
+          "prompt_eval_count": 39,
+          "prompt_eval_duration": 14807000,
+          "load_duration": 2580000,
+          "total_duration": 3458572700,
+          "tokens_per_second": 74.7002506543567,
+          "repetition": 2
+        },
+        {
+          "eval_count": 256,
+          "eval_duration": 3444890000,
+          "prompt_eval_count": 39,
+          "prompt_eval_duration": 13887000,
+          "load_duration": 2673900,
+          "total_duration": 3463430500,
+          "tokens_per_second": 74.31296790318413,
+          "repetition": 3
+        }
+      ],
+      "median_tokens_per_second": 74.31296790318413
+    }
+  ],
+  "completed_at": "2026-10-21T13:32:29.900554+00:00",
+  "publication": {
+    "review_status": "structure_and_arithmetic_verified",
+    "source_sha256": "1f4aff6e31f9d5b14568333febd4be6c0f5ae81a2f73177ca85f344feb587a25",
+    "review_scope": "Local source JSON structure, metric arithmetic and privacy reviewed. No independent rerun or quality evaluation.",
+    "hardware": {
+      "cpu": "Intel Core i9-9900K @ 3.60GHz",
+      "gpu": "NVIDIA GeForce RTX 2070",
+      "installed_ram_bytes": 34359738368,
+      "installed_ram_gib": 32,
+      "gpu_driver_windows": "32.0.16.1088",
+      "source": "Windows CIM: Win32_Processor.Name, Win32_VideoController.Name/DriverVersion, sum of Win32_PhysicalMemory.Capacity; collected after the benchmark on 2026-10-21.",
+      "gpu_execution_during_run": "Unverified: no per-run GPU residency trace was saved. Earlier preliminary observation is not evidence for this session.",
+      "memory_usage": "Actual RAM and VRAM consumption not measured.",
+      "adapter_scope": "Physical GPU listed; a virtual display adapter is excluded from the compute hardware description."
+    },
+    "interpretation": "All six measured repetitions reached num_predict=256. This compares capped generation throughput, not model quality. Tokenizers differ; identical token limits do not imply equal text length."
+  }
+}
